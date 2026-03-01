@@ -61,4 +61,29 @@ public class TaskTest {
             assertFalse(level.getColor().isBlank());
         }
     }
+
+    @Test
+    void parsesHighCorrectly() {
+        assertEquals(Level.HIGH, ParseLevel.parseLevel("HIGH"));
+    }
+
+    @Test
+    void parsesLowercaseInput() {
+        assertEquals(Level.LOW, ParseLevel.parseLevel("low"));
+    }
+
+    @Test
+    void parsesMixedCaseInput() {
+        assertEquals(Level.MEDIUM, ParseLevel.parseLevel("Medium"));
+    }
+
+    @Test
+    void returnsNullForInvalidValue() {
+        assertNull(ParseLevel.parseLevel("CRITICAL"));
+    }
+
+    @Test
+    void returnsNullForEmptyString() {
+        assertNull(ParseLevel.parseLevel(""));
+    }
 }
