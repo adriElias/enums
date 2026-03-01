@@ -12,5 +12,9 @@ public class App {
         task1.showBehavior();
         task2.showBehavior();
         task3.showBehavior();
+
+        for (Level element : Level.values()) {
+            System.out.println(element + " color: " + element.getColor());
+        }
     }
 }

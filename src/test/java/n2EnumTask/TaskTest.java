@@ -38,4 +38,27 @@ public class TaskTest {
         String output = captureOutput(task);
         assertTrue(output.contains("practice the spike"));
     }
+
+    @Test
+    void lowColorIsGreen() {
+        assertEquals("Green", Level.LOW.getColor());
+    }
+
+    @Test
+    void mediumColorIsYellow() {
+        assertEquals("Yellow", Level.MEDIUM.getColor());
+    }
+
+    @Test
+    void highColorIsRed() {
+        assertEquals("Red", Level.HIGH.getColor());
+    }
+
+    @Test
+    void allLevelsHaveColor() {
+        for (Level level : Level.values()) {
+            assertNotNull(level.getColor());
+            assertFalse(level.getColor().isBlank());
+        }
+    }
 }
