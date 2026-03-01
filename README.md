@@ -39,7 +39,7 @@ enums/
 │   └── Task.java
 │   └── Main.java
 └── test/java/
-└── EnumsTest.java    
+│   └── EnumsTest.java    
 ```
 ## How to Run
 
